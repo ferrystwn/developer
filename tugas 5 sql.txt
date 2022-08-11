@@ -1,0 +1,26 @@
+1. CREATE DATABASE myshop;
+
+2. - create TABLE users(
+    id int not null AUTO_INCREMENT,
+    name varchar (255),
+    email varchar (255),
+    password varchar (255),
+    PRIMARY KEY (id)
+	);
+
+   - create TABLE categories(
+    id int not null AUTO_INCREMENT,
+    name varchar (255),
+    PRIMARY KEY (id)
+	);
+
+   - create TABLE items(
+    id int not null AUTO_INCREMENT,
+    name varchar(255),
+    description	varchar(255),
+    price int,
+    stock int,
+    PRIMARY KEY (id),
+    FOREIGN KEY fk_categories(id)
+    REFERENCES categories(id)
+    );
